@@ -6,28 +6,28 @@ pipeline {
      stages {
           stage("Compile") {
                steps {
-                    sh "./gradlew compileJava"
+                    sh ".sample01/gradlew compileJava"
                }
           }
           stage("Unit test") {
                steps {
-                    sh "./gradlew test"
+                    sh ".sample01/gradlew test"
                }
           }
           stage("Code coverage") {
                steps {
-                    sh "./gradlew jacocoTestReport"
-                    sh "./gradlew jacocoTestCoverageVerification"
+                    sh ".sample01/gradlew jacocoTestReport"
+                    sh ".sample01/gradlew jacocoTestCoverageVerification"
                }
           }
           stage("Static code analysis") {
                steps {
-                    sh "./gradlew checkstyleMain"
+                    sh ".sample01/gradlew checkstyleMain"
                }
           }
           stage("Package") {
                steps {
-                    sh "./gradlew build"
+                    sh ".sample01/gradlew build"
                }
           }
 
