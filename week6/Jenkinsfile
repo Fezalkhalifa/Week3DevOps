@@ -7,7 +7,7 @@ pipeline {
           stage("Compile") {
                steps {
                     sh("ls -A1 ${myDir}")
-                    sh "./week6/sample01/gradlew compileJava"
+                    sh "gradlew compileJava"
                }
           }
           stage("Unit test") {
