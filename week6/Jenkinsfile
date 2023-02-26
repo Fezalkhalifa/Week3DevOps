@@ -18,7 +18,7 @@ podTemplate(containers: [
             if (env.BRANCH_NAME != "multibranch") {
               echo "I am the ${env.BRANCH_NAME} branch"
               sh '''
-              cd week6
+              sudo cd week6
               chmod +x gradlew
               ./gradlew test
               '''
@@ -27,7 +27,7 @@ podTemplate(containers: [
                 sh '''
                 ls
                 pwd
-                cd week6
+                sudo cd week6
                 ./gradlew jacocoTestCoverageVerification
                 ./gradlew jacocoTestReport
                 '''
