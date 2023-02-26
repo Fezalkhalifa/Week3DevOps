@@ -25,6 +25,7 @@ podTemplate(containers: [
             }else{
 
                 sh '''
+                ls
                 pwd
                 cd week6
                 ./gradlew jacocoTestCoverageVerification
