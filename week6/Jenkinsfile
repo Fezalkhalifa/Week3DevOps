@@ -18,7 +18,6 @@ podTemplate(containers: [
             if (env.BRANCH_NAME != "multibranch") {
               echo "I am the ${env.BRANCH_NAME} branch"
               sh '''
-              cd Chapter08/sample1
               chmod +x gradlew
               ./gradlew test
               '''
@@ -26,12 +25,11 @@ podTemplate(containers: [
 
                 sh '''
                 pwd
-                cd Chapter08/sample1
                 ./gradlew jacocoTestCoverageVerification
                 ./gradlew jacocoTestReport
                 '''
                 publishHTML (target: [
-                reportDir: 'Chapter08/sample1/build/reports/tests/test',
+                reportDir: 'build/reports/tests/test',
                 reportFiles: 'index.html',
                 reportName: "JaCoCo Report"
                 ])
